@@ -35,6 +35,6 @@ int main() {
     }
 
     DFS(0, graph);
-    result < 0 ? cout << 0 : cout << result - 1;
+    result - 1 < 0 ? cout << 0 : cout << result - 1;
     return 0;
 }
