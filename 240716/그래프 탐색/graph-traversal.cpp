@@ -5,7 +5,7 @@ using namespace std;
 vector<bool> visit;
 int result = 0;
 
-void DFS(int target, vector<vector<int>> gp)
+void DFS(int target, const vector<vector<int>> &gp)
 {
     for (int i = 0; i < gp.size(); i++)
     {
@@ -21,11 +21,10 @@ void DFS(int target, vector<vector<int>> gp)
 int main() {
     int N, M, temp;
     cin >> N >> M;
-    temp = N;
     vector<vector<int>> graph(N, vector<int>(N, 0));
-    
-    while(temp--) { visit.push_back(false); }
+    visit.resize(N, false);
     temp = M;
+
     while(temp--)
     {
         int x, y;
@@ -34,7 +33,9 @@ int main() {
         graph[y-1][x-1] = 1;
     }
 
+    visit[0] = true;
     DFS(0, graph);
-    result - 1 < 0 ? cout << 0 : cout << result - 1;
+    cout << result;
+    
     return 0;
 }
