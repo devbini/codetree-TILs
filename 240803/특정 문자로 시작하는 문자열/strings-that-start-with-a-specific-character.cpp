@@ -30,7 +30,7 @@ int main() {
 
     cout << fixed;
     cout.precision(2);
-    cout << m_count << " " << float(m_length / m_count);
+    cout << m_count << " " << float(float(m_length) / float(m_count));
 
     return 0;
 }
